@@ -17,8 +17,8 @@ class HomePage():
         self.OUTPUT_PATH = Path(__file__).parent
         self.ASSETS_PATH = self.OUTPUT_PATH / Path(r"C:\Users\fuzhe\OneDrive\Desktop\cs hw\gui\assets\frame0")
 
-        #self.canvas = Canvas(self.root, height = 1000, width = 600, bg = "#FF8000")
-        #self.canvas.pack(fill = "both", expand = False)
+        self.canvas = Canvas(self.root, height = 1000, width = 600, bg = "#FF8000")
+        self.canvas.pack(fill = "both", expand = False)
 
         self.mainFrame = tk.Frame(self.root, bg = "#79BCF7")
         self.mainFrame.pack(fill = "both", expand = True)
@@ -31,8 +31,6 @@ class HomePage():
     
     def fillWindow(self):
 
-        
-        
         image = Image.open(self.relative_to_assets("button_1.png"))
         self.button_image_1 = ImageTk.PhotoImage(image)
         #self.button_image_1 = PhotoImage(file=self.relative_to_assets("button_1.png"))
@@ -114,6 +112,7 @@ class HomePage():
             width=235.0,
             height=100.0
         )
+        '''
         image = Image.open(self.relative_to_assets("image_1.png"))
         self.image_image_1 = ImageTk.PhotoImage(image)
         #self.image_image_1 = PhotoImage(file=self.relative_to_assets("image_1.png"))
@@ -122,11 +121,12 @@ class HomePage():
             993.0,
             image=self.image_image_1
         )
+      
         self.canvas.create_rectangle(
             257.0,
             13.0,
-            1434.0,
-            1023.0,
+            1000,
+            600.0,
             fill="#DAEBF9",
             outline="")
 
@@ -163,4 +163,4 @@ class HomePage():
             font=("Roboto Regular", 24 * -1)
         )
 
-
+'''
