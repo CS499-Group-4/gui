@@ -13,277 +13,192 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\fuzhe\OneDrive\Desktop\cs hw\gui\assets\frame2")
 
+class StartPage():
 
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+    def __init__(self):
+        self.root = root
 
-
-window = Tk()
-
-window.geometry("1455x1041")
-window.configure(bg = "#FFFFFF")
+        self.fillWindow()
 
 
-canvas = Canvas(
-    window,
-    bg = "#FFFFFF",
-    height = 1041,
-    width = 1455,
-    bd = 0,
-    highlightthickness = 0,
-    relief = "ridge"
-)
+    def relative_to_assets(path: str) -> Path:
+        return ASSETS_PATH / Path(path)
 
-canvas.place(x = 0, y = 0)
-canvas.create_rectangle(
-    0.0,
-    1.0,
-    235.0,
-    1042.0,
-    fill="#79BCF7",
-    outline="")
 
-button_image_1 = PhotoImage(
-    file=relative_to_assets("button_1.png"))
-button_1 = Button(
-    image=button_image_1,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
-    relief="flat"
-)
-button_1.place(
-    x=1.0,
-    y=402.0,
-    width=235.0,
-    height=100.0
-)
+    def fillWindow(self):
 
-button_image_2 = PhotoImage(
-    file=relative_to_assets("button_2.png"))
-button_2 = Button(
-    image=button_image_2,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
-    relief="flat"
-)
-button_2.place(
-    x=0.0,
-    y=302.0,
-    width=235.0,
-    height=100.0
-)
+        canvas = Canvas(
+            window,
+            bg = "#FFFFFF",
+            height = 1041,
+            width = 1455,
+            bd = 0,
+            highlightthickness = 0,
+            relief = "ridge"
+        )
 
-button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
-button_3 = Button(
-    image=button_image_3,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
-    relief="flat"
-)
-button_3.place(
-    x=0.0,
-    y=202.0,
-    width=235.0,
-    height=100.0
-)
+        canvas.place(x = 0, y = 0)
+        canvas.create_rectangle(
+            0.0,
+            1.0,
+            235.0,
+            1042.0,
+            fill="#79BCF7",
+            outline="")
 
-button_image_4 = PhotoImage(
-    file=relative_to_assets("button_4.png"))
-button_4 = Button(
-    image=button_image_4,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
-    relief="flat"
-)
-button_4.place(
-    x=0.0,
-    y=102.0,
-    width=235.0,
-    height=100.0
-)
+        canvas.create_rectangle(
+            918.0,
+            1.0,
+            1458.0,
+            1042.0,
+            fill="#DAEBF9",
+            outline="")
 
-button_image_5 = PhotoImage(
-    file=relative_to_assets("button_5.png"))
-button_5 = Button(
-    image=button_image_5,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
-    relief="flat"
-)
-button_5.place(
-    x=0.0,
-    y=1.5,
-    width=235.0,
-    height=100.0
-)
+        button_image_6 = PhotoImage(
+            file=relative_to_assets("button_6.png"))
+        button_6 = Button(
+            image=button_image_6,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_6 clicked"),
+            relief="flat"
+        )
+        button_6.place(
+            x=942.0,
+            y=36.0,
+            width=206.0,
+            height=101.0
+        )
 
-image_image_1 = PhotoImage(
-    file=relative_to_assets("image_1.png"))
-image_1 = canvas.create_image(
-    118.0,
-    993.0,
-    image=image_image_1
-)
+        button_image_7 = PhotoImage(
+            file=relative_to_assets("button_7.png"))
+        button_7 = Button(
+            image=button_image_7,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_7 clicked"),
+            relief="flat"
+        )
+        button_7.place(
+            x=1224.0,
+            y=36.0,
+            width=200.0,
+            height=112.0
+        )
 
-canvas.create_rectangle(
-    918.0,
-    1.0,
-    1458.0,
-    1042.0,
-    fill="#DAEBF9",
-    outline="")
+        canvas.create_text(
+            1158.0,
+            169.0,
+            anchor="nw",
+            text="Status:",
+            fill="#094478",
+            font=("Jomolhari Regular", 20 * -1)
+        )
 
-button_image_6 = PhotoImage(
-    file=relative_to_assets("button_6.png"))
-button_6 = Button(
-    image=button_image_6,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_6 clicked"),
-    relief="flat"
-)
-button_6.place(
-    x=942.0,
-    y=36.0,
-    width=206.0,
-    height=101.0
-)
+        canvas.create_rectangle(
+            935.0,
+            339.0,
+            1435.0,
+            818.0,
+            fill="#FFFFFF",
+            outline="")
 
-button_image_7 = PhotoImage(
-    file=relative_to_assets("button_7.png"))
-button_7 = Button(
-    image=button_image_7,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_7 clicked"),
-    relief="flat"
-)
-button_7.place(
-    x=1224.0,
-    y=36.0,
-    width=200.0,
-    height=112.0
-)
+        canvas.create_text(
+            1064.0,
+            339.0,
+            anchor="nw",
+            text="Conflict  Summary：",
+            fill="#094478",
+            font=("Jomolhari Regular", 20 * -1)
+        )
 
-canvas.create_text(
-    1158.0,
-    169.0,
-    anchor="nw",
-    text="Status:",
-    fill="#094478",
-    font=("Jomolhari Regular", 20 * -1)
-)
+        button_image_8 = PhotoImage(
+            file=relative_to_assets("button_8.png"))
+        button_8 = Button(
+            image=button_image_8,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_8 clicked"),
+            relief="flat"
+        )
+        button_8.place(
+            x=1206.0,
+            y=737.0,
+            width=200.0,
+            height=65.0
+        )
 
-canvas.create_rectangle(
-    935.0,
-    339.0,
-    1435.0,
-    818.0,
-    fill="#FFFFFF",
-    outline="")
+        button_image_9 = PhotoImage(
+            file=relative_to_assets("button_9.png"))
+        button_9 = Button(
+            image=button_image_9,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_9 clicked"),
+            relief="flat"
+        )
+        button_9.place(
+            x=972.0,
+            y=741.0,
+            width=200.0,
+            height=61.0
+        )
 
-canvas.create_text(
-    1064.0,
-    339.0,
-    anchor="nw",
-    text="Conflict  Summary：",
-    fill="#094478",
-    font=("Jomolhari Regular", 20 * -1)
-)
+        button_image_10 = PhotoImage(
+            file=relative_to_assets("button_10.png"))
+        button_10 = Button(
+            image=button_image_10,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_10 clicked"),
+            relief="flat"
+        )
+        button_10.place(
+            x=942.0,
+            y=893.0,
+            width=200.0,
+            height=101.0
+        )
 
-button_image_8 = PhotoImage(
-    file=relative_to_assets("button_8.png"))
-button_8 = Button(
-    image=button_image_8,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_8 clicked"),
-    relief="flat"
-)
-button_8.place(
-    x=1206.0,
-    y=737.0,
-    width=200.0,
-    height=65.0
-)
+        button_image_11 = PhotoImage(
+            file=relative_to_assets("button_11.png"))
+        button_11 = Button(
+            image=button_image_11,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_11 clicked"),
+            relief="flat"
+        )
+        button_11.place(
+            x=1224.0,
+            y=893.0,
+            width=200.0,
+            height=101.0
+        )
 
-button_image_9 = PhotoImage(
-    file=relative_to_assets("button_9.png"))
-button_9 = Button(
-    image=button_image_9,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_9 clicked"),
-    relief="flat"
-)
-button_9.place(
-    x=972.0,
-    y=741.0,
-    width=200.0,
-    height=61.0
-)
+        canvas.create_text(
+            931.0,
+            201.0,
+            anchor="nw",
+            text="status info",
+            fill="#000000",
+            font=("Jomolhari Regular", 15 * -1)
+        )
 
-button_image_10 = PhotoImage(
-    file=relative_to_assets("button_10.png"))
-button_10 = Button(
-    image=button_image_10,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_10 clicked"),
-    relief="flat"
-)
-button_10.place(
-    x=942.0,
-    y=893.0,
-    width=200.0,
-    height=101.0
-)
+        canvas.create_rectangle(
+            916.9881591796875,
+            153.47650146484375,
+            1455.0114135742188,
+            154.47650146484375,
+            fill="#094478",
+            outline="")
 
-button_image_11 = PhotoImage(
-    file=relative_to_assets("button_11.png"))
-button_11 = Button(
-    image=button_image_11,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_11 clicked"),
-    relief="flat"
-)
-button_11.place(
-    x=1224.0,
-    y=893.0,
-    width=200.0,
-    height=101.0
-)
-
-canvas.create_text(
-    931.0,
-    201.0,
-    anchor="nw",
-    text="status info",
-    fill="#000000",
-    font=("Jomolhari Regular", 15 * -1)
-)
-
-canvas.create_rectangle(
-    916.9881591796875,
-    153.47650146484375,
-    1455.0114135742188,
-    154.47650146484375,
-    fill="#094478",
-    outline="")
-
-canvas.create_rectangle(
-    918.0,
-    314.0,
-    1456.0232543945312,
-    315.0,
-    fill="#094478",
-    outline="")
-window.resizable(False, False)
-window.mainloop()
+        canvas.create_rectangle(
+            918.0,
+            314.0,
+            1456.0232543945312,
+            315.0,
+            fill="#094478",
+            outline="")
+        window.resizable(False, False)
+        window.mainloop()
