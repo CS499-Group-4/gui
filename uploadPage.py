@@ -13,197 +13,112 @@ from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\fuzhe\OneDrive\Desktop\cs hw\gui\assets\frame1")
 
+class UploadPage():
+    def __init__(self, root):
+            self.root = root
 
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+            #self.canvas = Canvas(self.root, height = 1000, width = 600, bg = "#FF8000")
+            #self.canvas.pack(fill = "both", expand = False)
 
+            self.fillWindow()
 
-window = Tk()
+    def relative_to_assets(path: str) -> Path:
+        return ASSETS_PATH / Path(path)
 
-window.geometry("1455x1041")
-window.configure(bg = "#FFFFFF")
+    def fillWindow(self):
 
+        canvas = Canvas(
+            window,
+            bg = "#FFFFFF",
+            height = 1041,
+            width = 1455,
+            bd = 0,
+            highlightthickness = 0,
+            relief = "ridge"
+        )
 
-canvas = Canvas(
-    window,
-    bg = "#FFFFFF",
-    height = 1041,
-    width = 1455,
-    bd = 0,
-    highlightthickness = 0,
-    relief = "ridge"
-)
+        canvas.place(x = 0, y = 0)
+        canvas.create_rectangle(
+            0.0,
+            1.0,
+            235.0,
+            1042.0,
+            fill="#79BCF7",
+            outline="")
 
-canvas.place(x = 0, y = 0)
-canvas.create_rectangle(
-    0.0,
-    1.0,
-    235.0,
-    1042.0,
-    fill="#79BCF7",
-    outline="")
+        button_image_6 = PhotoImage(
+            file=self.relative_to_assets("button_6.png"))
+        button_6 = Button(
+            image=button_image_6,
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: print("button_6 clicked"),
+            relief="flat"
+        )
+        button_6.place(
+            x=250.0,
+            y=25.0,
+            width=1177.0,
+            height=211.0
+        )
 
-button_image_1 = PhotoImage(
-    file=relative_to_assets("button_1.png"))
-button_1 = Button(
-    image=button_image_1,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
-    relief="flat"
-)
-button_1.place(
-    x=1.0,
-    y=402.0,
-    width=235.0,
-    height=100.0
-)
+        canvas.create_text(
+            481.0,
+            299.0,
+            anchor="nw",
+            text="File name",
+            fill="#094478",
+            font=("Roboto Black", 20 * -1)
+        )
 
-button_image_2 = PhotoImage(
-    file=relative_to_assets("button_2.png"))
-button_2 = Button(
-    image=button_image_2,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
-    relief="flat"
-)
-button_2.place(
-    x=0.0,
-    y=302.0,
-    width=235.0,
-    height=100.0
-)
+        canvas.create_text(
+            481.0,
+            452.0,
+            anchor="nw",
+            text="File name",
+            fill="#094478",
+            font=("Roboto Black", 20 * -1)
+        )
 
-button_image_3 = PhotoImage(
-    file=relative_to_assets("button_3.png"))
-button_3 = Button(
-    image=button_image_3,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
-    relief="flat"
-)
-button_3.place(
-    x=0.0,
-    y=202.0,
-    width=235.0,
-    height=100.0
-)
+        canvas.create_text(
+            482.0,
+            615.0,
+            anchor="nw",
+            text="File name",
+            fill="#094478",
+            font=("Roboto Black", 20 * -1)
+        )
 
-button_image_4 = PhotoImage(
-    file=relative_to_assets("button_4.png"))
-button_4 = Button(
-    image=button_image_4,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
-    relief="flat"
-)
-button_4.place(
-    x=0.0,
-    y=102.0,
-    width=235.0,
-    height=100.0
-)
+        image_image_2 = PhotoImage(
+            file=self.relative_to_assets("image_2.png"))
+        image_2 = canvas.create_image(
+            372.0,
+            322.0,
+            image=image_image_2
+        )
 
-button_image_5 = PhotoImage(
-    file=relative_to_assets("button_5.png"))
-button_5 = Button(
-    image=button_image_5,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
-    relief="flat"
-)
-button_5.place(
-    x=0.0,
-    y=1.5,
-    width=235.0,
-    height=100.0
-)
+        image_image_3 = PhotoImage(
+            file=self.relative_to_assets("image_3.png"))
+        image_3 = canvas.create_image(
+            372.0,
+            467.0,
+            image=image_image_3
+        )
 
-image_image_1 = PhotoImage(
-    file=relative_to_assets("image_1.png"))
-image_1 = canvas.create_image(
-    118.0,
-    993.0,
-    image=image_image_1
-)
+        image_image_4 = PhotoImage(
+            file=self.relative_to_assets("image_4.png"))
+        image_4 = canvas.create_image(
+            372.0,
+            633.0,
+            image=image_image_4
+        )
 
-button_image_6 = PhotoImage(
-    file=relative_to_assets("button_6.png"))
-button_6 = Button(
-    image=button_image_6,
-    borderwidth=0,
-    highlightthickness=0,
-    command=lambda: print("button_6 clicked"),
-    relief="flat"
-)
-button_6.place(
-    x=250.0,
-    y=25.0,
-    width=1177.0,
-    height=211.0
-)
-
-canvas.create_text(
-    481.0,
-    299.0,
-    anchor="nw",
-    text="File name",
-    fill="#094478",
-    font=("Roboto Black", 20 * -1)
-)
-
-canvas.create_text(
-    481.0,
-    452.0,
-    anchor="nw",
-    text="File name",
-    fill="#094478",
-    font=("Roboto Black", 20 * -1)
-)
-
-canvas.create_text(
-    482.0,
-    615.0,
-    anchor="nw",
-    text="File name",
-    fill="#094478",
-    font=("Roboto Black", 20 * -1)
-)
-
-image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
-image_2 = canvas.create_image(
-    372.0,
-    322.0,
-    image=image_image_2
-)
-
-image_image_3 = PhotoImage(
-    file=relative_to_assets("image_3.png"))
-image_3 = canvas.create_image(
-    372.0,
-    467.0,
-    image=image_image_3
-)
-
-image_image_4 = PhotoImage(
-    file=relative_to_assets("image_4.png"))
-image_4 = canvas.create_image(
-    372.0,
-    633.0,
-    image=image_image_4
-)
-
-image_image_5 = PhotoImage(
-    file=relative_to_assets("image_5.png"))
-image_5 = canvas.create_image(
-    1239.0,
-    317.0,
-    image=image_image_5
-)
-window.resizable(False, False)
-window.mainloop()
+        image_image_5 = PhotoImage(
+            file=self.relative_to_assets("image_5.png"))
+        image_5 = canvas.create_image(
+            1239.0,
+            317.0,
+            image=image_image_5
+        )
+        window.resizable(False, False)
+        window.mainloop()
