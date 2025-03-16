@@ -99,6 +99,7 @@ class homePage(tk.Frame):
         btn5.image = btn5_img
         btn5.place(x=0.0 * scale_x, y=1.5 * scale_y, width=235.0 * scale_x, height=100.0 * scale_y)
         
+        #logo iamge
         img1 = scaled_photoimage(str(relative_to_assets("image_1.png")), scale_x, scale_y)
         canvas.create_image(215.0 * scale_x, 1700.0 * scale_y, image=img1)
         canvas.image = img1
@@ -108,7 +109,7 @@ class homePage(tk.Frame):
                            anchor="nw", text="Welcome to Course Scheduling System",
                            fill="#094478", font=("Roboto Black", int(30 * scale_y)))
         desc_text = (
-            "                                                           System Description:\n\n"
+            "                                             System Description:\n\n"
             "Make a compatible easy-to-use user interface within an application that allows\n"
             "the automated scheduling of university courses by the dean of a given department\n"
             "from imported data.\n\n"
@@ -132,6 +133,11 @@ class UploadPage(tk.Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
         self.controller = controller
+
+        OUTPUT_PATH = Path(__file__).parent
+        ASSETS_PATH = OUTPUT_PATH / Path(r"C:\cs499\gui\assets\frame1")
+        def relative_to_assets(path: str) -> Path:
+            return ASSETS_PATH / Path(path)
 
         orig_width = 1455
         orig_height = 1041
@@ -205,15 +211,21 @@ class UploadPage(tk.Frame):
                            text="File name", fill="#094478", font=("Roboto Black", int(20 * scale_y)))
         self.canvas.create_text(482.0 * scale_x, 615.0 * scale_y, anchor="nw",
                            text="File name", fill="#094478", font=("Roboto Black", int(20 * scale_y)))
+        #logo img
         img1 = scaled_photoimage(str(relative_to_assets("image_1.png")), scale_x, scale_y)
         self.canvas.create_image(215.0 * scale_x, 1700.0 * scale_y, image=img1)
         self.canvas.image = img1
+        
+        #upload success img
         img2 = scaled_photoimage(str(relative_to_assets("image_2.png")), scale_x, scale_y)
         self.canvas.create_image(372.0 * scale_x, 322.0 * scale_y, image=img2)
+        #uploading img
         img3 = scaled_photoimage(str(relative_to_assets("image_3.png")), scale_x, scale_y)
         self.canvas.create_image(372.0 * scale_x, 467.0 * scale_y, image=img3)
+        #upload failed img
         img4 = scaled_photoimage(str(relative_to_assets("image_4.png")), scale_x, scale_y)
         self.canvas.create_image(372.0 * scale_x, 633.0 * scale_y, image=img4)
+        #deleted file img
         img5 = scaled_photoimage(str(relative_to_assets("image_5.png")), scale_x, scale_y)
         self.canvas.create_image(1239.0 * scale_x, 317.0 * scale_y, image=img5)
         
