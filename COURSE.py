@@ -45,11 +45,12 @@ class MainApp(tk.Tk):
         
         self.frames = {}
         for F in (HomePage, StartPage, UploadPage, SettingPage, ConflictPage, ViewPage):
+            pageName = F.__name__
             page = F(parent=container, controller=self)
-            self.frames[F] = page
+            self.frames[pageName] = page
             page.grid(row=0, column=0, sticky="nsew")
         
-        self.show_frame(HomePage)
+        self.show_frame("HomePage")
     
     def show_frame(self, page_class):
         frame = self.frames[page_class]
