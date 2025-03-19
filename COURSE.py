@@ -5,12 +5,12 @@ from pathlib import Path
 from PIL import Image, ImageTk
 import os
 
-from homePage import HomePage
-from startPage import StartPage
-from uploadPage import UploadPage
-from settingPage import SettingPage
-from conflictPage import ConflictPage
-from viewPage import ViewPage
+from pages.homePage import HomePage
+from pages.startPage import StartPage
+from pages.uploadPage import UploadPage
+from pages.settingPage import SettingPage
+from pages.conflictPage import ConflictPage
+from pages.viewPage import ViewPage
 
 # ---------------------------
 # Common helper functions and resource paths
